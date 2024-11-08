@@ -18,12 +18,12 @@ body {
 /* Estilizar os círculos laranjas no fundo so site */
 .radial-orange {
   position: absolute;
-  width: 20rem;
-  height: 20rem;
+  width: 15rem;
+  height: 15rem;
   border-radius: 100%;
   background-color: #f9ac54;
-  filter: blur(120px);
-  opacity: 0.1;
+  filter: blur(100px);
+  opacity: 0.15;
   z-index: -50;
 }
 
