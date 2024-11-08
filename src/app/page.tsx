@@ -92,7 +92,7 @@ export default function Home() {
           />
           <JoinBenefits /> {/* Importando o componente JoinBenefits */}
         </section>
-        <div className="radial-orange r2"></div>
+        {/* <div className="radial-orange r2"></div> */}
         <Plans /> {/* Importando o componente Plans */}
       </main>
       <MemberReview /> {/* Importando o componente MemberReview */}

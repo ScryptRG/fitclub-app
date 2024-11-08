@@ -7,7 +7,6 @@ body {
   background-color: #111317;
   font-family: "Poppins", sans-serif;
   color: #fff;
-  overflow-x: hidden; /* Usado para prevenir que os círculos laranjas causem overflow no site */
 }
 
 /* Estilização da palavra "Make" que está no Header */
@@ -29,7 +28,7 @@ body {
 }
 
 .r2 {
-  left: 70%;
+  left: 20%;
 }
 
 .r1 {
