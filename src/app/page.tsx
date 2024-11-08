@@ -1,101 +1,107 @@
+"use client";
+
+// Importando componentes
+import Explore from "@/app/components/explore";
+import Header from "@/app/components/header";
+import Plans from "@/app/components/plans";
+import MemberReview from "@/app/components/member-review";
+import Footer from "@/app/components/footer";
+import JoinBenefits from "@/app/components/join-benefits";
+
+// Importando o componente nativo de imagens do Next.js
 import Image from "next/image";
 
-export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+// Importando imagens
+import Class1 from "@/app/assets/images/class-1.jpg";
+import Class2 from "@/app/assets/images/class-2.jpg";
+import Join from "@/app/assets/images/join.jpg";
+import { useEffect, useState } from "react";
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+export default function Home() {
+  const [showImages, setShowImages] = useState(false);
+
+  // O useEffect é usado para executar uma função quando o componente é montado.
+  useEffect(() => {
+    // O handleScroll é uma função que será executada quando o usuário rolar a página.
+    const handleScroll = () => {
+      // O setShowImages é usado para atualizar o estado quando "showElement" para verdadeiro quando o usuário rolar a página em 300px.
+      setShowImages(window.scrollY > 300);
+    };
+
+    // O window.addEventListener é usado para ativar a função quando o usuário rolar a página.
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
+  return (
+    <>
+      <main className="max-w-[75rem] mx-auto px-6">
+        <Header /> {/* Importando o componente Header */}
+        <div className="radial-orange r1"></div>
+        <Explore /> {/* Importando o componente Explore */}
+        {/* Seção "THE CLASS YOU WILL GET HERE" */}
+        <section className="flex justify-between flex-wrap mt-40 mb-12 max-xl:justify-center">
+          {/* Duas imagens desta seção */}
+          <div className={`max-w-[38rem]`}>
             <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={Class1}
+              alt="A man holding two red ropes"
+              className={`rounded-xl relative left-12 max-sm:w-[400px] max-sm:left-5 ${
+                showImages && "animate-slideUp"
+              }`}
+              width={550}
+            />{" "}
+            {/* Quando o "showImages" for verdadeiro, será adicionado a classe "animate-slideUp" que animará a imagem */}
+            <Image
+              src={Class2}
+              alt="A man holding two weights"
+              className={`rounded-xl relative bottom-24 ${
+                showImages && "animate-slideUp2"
+              }`}
+              width={300}
             />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+          </div>
+
+          <div className="radial-orange r2"></div>
+
+          {/* Seção "THE CLASS YOU WILL GET HERE" */}
+          <div className="flex flex-col gap-8 w-[45%] ml-5 max-xl:w-[70%]">
+            <h2 className="font-semibold text-4xl">
+              THE CLASS YOU WILL GET HERE
+            </h2>
+            <p className="text-light-gray">
+              Led by our team of expert and motivational instructors, 'The Class
+              You Will Get Here' is a high-energy, results-driven session that
+              combines a perfect blend of cardio, strength training, and
+              functional exercises. Each class is carefully curated to keep you
+              engaged and challenged, ensuring you never hit a plateau in your
+              fitness endeavors.
+            </p>
+            <button className="self-start bg-primary-orange px-7 py-3 rounded hover:bg-secondary-orange duration-200">
+              Book A Class
+            </button>
+          </div>
+
+          {/* Seção "WHY JOIN US?" */}
+        </section>
+        <section>
+          <h2 className="font-semibold text-4xl text-center">WHY JOIN US?</h2>
+          <p className="text-light-gray w-[80%] text-center mx-auto my-8">
+            Our diverse membership base creates a friendly and supportive
+            atmosphere, where you can make friends and stay motivated.
+          </p>
+          <div className="radial-orange r1"></div>
+          <Image
+            src={Join}
+            alt="Two women and two men riding a exercise bike at the gym."
+            className="rounded-xl"
+          />
+          <JoinBenefits /> {/* Importando o componente JoinBenefits */}
+        </section>
+        <div className="radial-orange r2"></div>
+        <Plans /> {/* Importando o componente Plans */}
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      <MemberReview /> {/* Importando o componente MemberReview */}
+      <Footer /> {/* Importando o componente Footer */}
+    </>
   );
 }

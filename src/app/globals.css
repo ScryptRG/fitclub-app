@@ -1,21 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: #111317;
+  font-family: "Poppins", sans-serif;
+  color: #fff;
+  overflow-x: hidden; /* Usado para prevenir que os círculos laranjas causem overflow no site */
+}
+
+/* Estilização da palavra "Make" que está no Header */
+#make-span {
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+
+/* Estilizar os círculos laranjas no fundo so site */
+.radial-orange {
+  position: absolute;
+  width: 20rem;
+  height: 20rem;
+  border-radius: 100%;
+  background-color: #f9ac54;
+  filter: blur(120px);
+  opacity: 0.1;
+  z-index: -50;
+}
+
+.r2 {
+  left: 70%;
+}
+
+.r1 {
+  right: 70%;
 }
