@@ -42,8 +42,6 @@ export default function Explore() {
           EXPLORE OUR PROGRAM
         </h1>
         <div className="flex gap-4 items-center">
-          {/* <Image src={ArrowLeft} alt="Arrow left icon" width={45} />
-          <Image src={ArrowRight} alt="Arrow right icon" width={45} /> */}
           <Icon
             icon="iconamoon:arrow-left-6-circle-thin"
             width="3rem"
@@ -76,6 +74,7 @@ export default function Explore() {
               href="#"
               className="font-medium hover:text-primary-orange duration-200">
               Join now
+              <Icon icon="si:arrow-right-fill" width="1.5em" height="1.5em" className="inline ml-1" />
             </a>
           </div>
         ))}
