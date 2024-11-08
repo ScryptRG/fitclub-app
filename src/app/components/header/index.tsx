@@ -7,8 +7,10 @@ import { useState } from "react";
 
 // Iniciando o componente Header
 export default function Header() {
+  // Estado para controlar a visibilidade do menu
   const [menu, setMenu] = useState(false);
 
+  // Lidar com a abertura do menu (toda vez que o usuário clica no botão de "hambúrguer", o estado vai se alternando de verdadeiro para falso ou falso para verdadeiro)
   const handleMenu = () =>  {
     setMenu(!menu)
   }
@@ -61,6 +63,7 @@ export default function Header() {
         </button>
       </nav>
 
+      {/* Menu mostrado apenas quando o botão de menu é clicado */}
       <nav className={`w-full h-[50%] hidden ${menu && "!block"}`}>
         <ul className="flex flex-col gap-8 items-center">
           <li>
