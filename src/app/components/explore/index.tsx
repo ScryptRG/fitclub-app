@@ -1,6 +1,4 @@
 import Image from "next/image";
-import ArrowLeft from "@/app/assets/images/explore/iconamoon--arrow-left-6-circle-thin.png";
-import ArrowRight from "@/app/assets/images/explore/iconamoon--arrow-right-6-circle-thin.png";
 import FistIcon from "@/app/assets/images/explore/ph--hand-fist-fill.png";
 import HeartIcon from "@/app/assets/images/explore/material-symbols--ecg-heart.png";
 import RunningIcon from "@/app/assets/images/explore/fa6-solid--person-running.png";

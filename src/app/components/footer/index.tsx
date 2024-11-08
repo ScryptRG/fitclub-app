@@ -11,7 +11,7 @@ export default function Footer() {
         <Image src={FitclubLogo} alt="Fitclub logo" />
         <p className="my-10">
           Take the first Step towards a healthier, stronger you with our
-          unbeatable pricing plans. Let's sweat, achieve, and conquer together!
+          unbeatable pricing plans. {"Let's"} sweat, achieve, and conquer together!
         </p>
         <div className="flex gap-3">
           <a href="#">

@@ -69,12 +69,7 @@ export default function Home() {
               THE CLASS YOU WILL GET HERE
             </h2>
             <p className="text-light-gray">
-              Led by our team of expert and motivational instructors, 'The Class
-              You Will Get Here' is a high-energy, results-driven session that
-              combines a perfect blend of cardio, strength training, and
-              functional exercises. Each class is carefully curated to keep you
-              engaged and challenged, ensuring you never hit a plateau in your
-              fitness endeavors.
+              Led by our team of expert and motivational instructors, {"'The Class You Will Get Here'"} is a high-energy, results-driven session that combines a perfect blend of cardio, strength training, and functional exercises. Each class is carefully curated to keep you engaged and challenged, ensuring you never hit a plateau in your fitness endeavors.
             </p>
             <button className="self-start bg-primary-orange px-7 py-3 rounded hover:bg-secondary-orange duration-200">
               Book A Class
