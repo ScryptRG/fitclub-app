@@ -77,12 +77,13 @@ export default function MemberReview() {
                 // Cria um array com o número de estrelas preenchidas baseado no rating do review atual
                 Array(memberReviews[reviewIndex].rating)
                   .fill(0)
-                  .map(() => (
+                  .map((_, i) => (
                     <Icon
                       icon="ic:round-star"
                       width="1.8em"
                       height="1.8em"
                       className="text-primary-orange"
+                      key={i}
                     />
                   ))
               }
@@ -90,12 +91,13 @@ export default function MemberReview() {
                 // Cria um array com o número de estrelas vazias para completar até 5 estrelas
                 Array(5 - memberReviews[reviewIndex].rating)
                   .fill(0)
-                  .map(() => (
+                  .map((_, i) => (
                     <Icon
                       icon="ic:round-star-outline"
                       width="1.8em"
                       height="1.8em"
                       className="text-primary-orange"
+                      key={i}
                     />
                   ))
               }
