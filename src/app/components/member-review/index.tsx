@@ -46,7 +46,7 @@ export default function MemberReview() {
     if (reviewIndex === 0) {
       setInstance("first");
     }
-    // Se o índice do review for 2, define a instância como "last" 
+    // Se o índice do review for 2, define a instância como "last"
     else if (reviewIndex === 2) {
       setInstance("last");
     }
@@ -74,33 +74,31 @@ export default function MemberReview() {
             </p>
             <div className="flex">
               {
-              // Cria um array com o número de estrelas preenchidas baseado no rating do review atual
-              Array(memberReviews[reviewIndex].rating)
-                .fill(0)
-                .map((e) => (
-                  <>
+                // Cria um array com o número de estrelas preenchidas baseado no rating do review atual
+                Array(memberReviews[reviewIndex].rating)
+                  .fill(0)
+                  .map(() => (
                     <Icon
                       icon="ic:round-star"
                       width="1.8em"
                       height="1.8em"
                       className="text-primary-orange"
                     />
-                  </>
-                ))}
+                  ))
+              }
               {
-              // Cria um array com o número de estrelas vazias para completar até 5 estrelas
-              Array(5 - memberReviews[reviewIndex].rating)
-                .fill(0)
-                .map((e) => (
-                  <>
+                // Cria um array com o número de estrelas vazias para completar até 5 estrelas
+                Array(5 - memberReviews[reviewIndex].rating)
+                  .fill(0)
+                  .map(() => (
                     <Icon
                       icon="ic:round-star-outline"
                       width="1.8em"
                       height="1.8em"
                       className="text-primary-orange"
                     />
-                  </>
-                ))}
+                  ))
+              }
             </div>
             <div className="flex justify-between items-center mt-8">
               <div className="flex gap-4 items-center">
