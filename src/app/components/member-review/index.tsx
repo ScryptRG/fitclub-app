@@ -42,15 +42,15 @@ export default function MemberReview() {
   ];
 
   useEffect(() => {
-    // Se o índice do review for 2, define a instância como "first"
+    // Se o índice do review for 0, define a instância como "first"
     if (reviewIndex === 0) {
       setInstance("first");
     }
-    // Se o índice do review for 2, define a instância como "last"
-    else if (reviewIndex === 2) {
+    // Se o índice do review for a mesmo do número de elementos do memberReviews, define a instância como "last"
+    else if (reviewIndex === memberReviews.length - 1) {
       setInstance("last");
     }
-    // Se o índice do review for 2, define a instância como "middle"
+    // Se o índice do review for outro, define a instância como "middle"
     else {
       setInstance("middle");
     }
